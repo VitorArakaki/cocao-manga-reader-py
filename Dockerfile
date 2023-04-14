@@ -21,4 +21,6 @@ COPY . /code/
 
 EXPOSE ${PORT}
 
-ENTRYPOINT ["gunicorn", "--bind=0.0.0.0:80", "--workers=3", "--worker-class=uvicorn.workers.UvicornWorker", "cocao:app"]
+# ENTRYPOINT ["gunicorn", "--bind=0.0.0.0:80", "--workers=3", "--worker-class=uvicorn.workers.UvicornWorker", "cocao:app"]
+
+CMD ["uvicorn", "cocao:app"]
